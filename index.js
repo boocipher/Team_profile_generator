@@ -42,3 +42,26 @@ function ManagerQuestions() {
         // console.log(teamMembers);
     })
 }
+
+function cycleQuestion() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "choice",
+            message: "What would you like to do next?",
+            choices: ['Create Engineer', 'Create Intern', 'I am done']
+        }
+    ])
+    .then(res => {
+        switch(res.choice) {
+            case 'Create Engineer':
+                createEngineer();
+                break;
+            case 'Create Intern':
+                createIntern();
+                break;
+            default:
+                generateHtml();
+        }
+    })
+}

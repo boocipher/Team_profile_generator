@@ -1,6 +1,3 @@
-// const generateCard = require('./generateCard')
-
-
 const htmlTemplate = (teamMembers) => {
     return `<!DOCTYPE html>
 <html lang="en">
