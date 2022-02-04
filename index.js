@@ -65,3 +65,67 @@ function cycleQuestion() {
         }
     })
 }
+
+function createEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the engineer's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the engineer's ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the engineer's email?"
+        },
+        {
+            type: "input",
+            name: "gitHub",
+            message: "What is the engineer's GitHub username"
+        }
+    ])
+    .then(res => {
+        const engineer = new Engineer(res.name, res.id, res.email, res.gitHub);
+        
+        teamMembers.push(engineer);
+        cycleQuestion();
+        // console.log(teamMembers);
+    })
+}
+
+function createIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is the intern's name?"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is the intern's ID?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is the intern's email?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is the intern's school?"
+        }
+    ])
+    .then(res => {
+        const intern = new Intern(res.name, res.id, res.email, res.school);
+        
+        teamMembers.push(intern);
+        cycleQuestion();
+        // console.log(teamMembers);
+    })
+}
