@@ -129,3 +129,16 @@ function createIntern() {
         // console.log(teamMembers);
     })
 }
+
+function generateHtml() {
+    const DIST_DIR = path.resolve(__dirname, 'dist')
+    const distPath = path.join(DIST_DIR, 'team.html');
+
+    if(!fs.existsSync(DIST_DIR)) {
+        fs.mkdirSync(DIST_DIR);
+    }
+
+    fs.writeFileSync(distPath, htmlTemplate(teamMembers), 'utf-8')
+}
+
+ManagerQuestions();
