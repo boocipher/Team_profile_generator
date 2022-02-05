@@ -12,7 +12,7 @@ test("Can set name via constructor argument", ()=> {
     expect(emp.name).toBe(name)
 })
 
-test("getName should return employees name", ()=> {
+test("getName returns employees name", ()=> {
     const name = "Aaron";
     const emp = new Employee(name);
     expect(emp.getName()).toBe(name);
