@@ -139,6 +139,7 @@ function generateHtml() {
     }
 
     fs.writeFileSync(distPath, htmlTemplate(teamMembers), 'utf-8')
+    console.log("Done! Open ./dist/team.html in Chrome")
 }
 
 ManagerQuestions();
